@@ -1,0 +1,12 @@
+<div class="memigo">
+    <section>
+
+        <div class="grid">
+            <app-card (openModal)="open($event)" [title]="data[contador].name" [photo]="data[contador].url"></app-card>
+        </div>
+        <button (click)="goBack()">Anterior</button><button (click)="goNext()">Siguiente</button>
+    </section>
+
+</div>
+
+<app-modal (closeModal)="onCloseModal($event)" [className]="className" [modalName]="modalName" [photoName] = 'photoName'></app-modal>

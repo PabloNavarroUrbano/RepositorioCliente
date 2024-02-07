@@ -1,0 +1,41 @@
+<div class="question" id="question-1">
+  <h4>Ejercicio 1</h4>
+  @if(case === 'one'){
+  <form method="post" [formGroup]="infoRicky" (ngSubmit)="submit()">
+    <div class="answer-bank">
+      <div class="answer">
+        <select name="finish" id="finish" formControlName = 'type'>
+          <option value="">- Búsqueda por: -</option>
+          <option value="capitulo">Capítulo</option>
+          <option value="personaje">Personaje</option>
+        </select>
+      </div>
+      <div class="answer">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="nombre"
+          placeholder="nombre"
+          formControlName = 'name'
+        />
+      </div>
+      <div class="answer">
+        <input type="submit" value="Enviar" class="primary" />
+      </div>
+    </div>
+  </form>
+  }@else if(case === 'two'){
+    <p>Personaje: {{term}}</p>
+    @for(name of episodes; track name; let i = $index){
+        <p>{{name.name}}-{{name.episode}}</p>
+        <br>
+    }
+  }@else if(case === 'three'){
+    <p>Personaje: {{term}}</p>
+    @for(name of characters; track name; let i = $index){
+        <p>{{name.name}}</p>
+        <br>
+    }
+  }
+</div>

@@ -1,0 +1,9 @@
+<div class="memigo">
+  <section>
+    <div class="grid">
+        @for (item of data; track item) {
+        <app-card [title]="item.name" [photo]="item.url"></app-card>
+        }
+    </div>
+  </section>
+</div>

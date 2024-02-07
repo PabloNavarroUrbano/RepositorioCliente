@@ -1,0 +1,20 @@
+<!-- Vista GitHub -->
+<div class="github">
+    <div class="menu">
+        <h2>Menu</h2>
+        <nav>
+            <ul>
+                <li><a>Ver perfiles</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        @for(user of users; track user; let i = $index){
+            <img (click)="onClick(i)" src="{{ user.avatar_url }}" alt="{{ i }}" />
+            <h1>{{ user.login }}</h1>
+            }
+
+
+        <app-modal (closeModal)="onCloseModal($event)" [className]="className" [modalName]="modalName" [photoName] = 'photoName'></app-modal>
+    </div>
+</div>
